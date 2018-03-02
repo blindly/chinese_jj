@@ -1,0 +1,7 @@
+{
+  "globals": {
+    "title": "A forgotten title",
+    "description": "My default description",
+    "apiDomain": "api.fivecat.xyz"
+  }
+}

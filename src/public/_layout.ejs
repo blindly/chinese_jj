@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>
+    <%- title %>
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Created from SCSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/flatly.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/prettify.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <!-- <link rel="stylesheet" href="/assets/css/main.css" /> -->
+  <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+  <!-- No Referrer -->
+  <meta name="referrer" content="no-referrer" />
+  <!-- Scrolls -->
+  <style>
+    html {
+      overflow: auto;
+    }
+  </style>
+  <!-- Scripts
+  <script src="/assets/js/jquery.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+  <script src="https://cdn.rawgit.com/download/jQuery-Touch-Events/0.9.0/src/jquery.mobile-events.min.js"></script>
+  <script src="https://cdn.rawgit.com/nnattawat/flip/v1.1.2/dist/jquery.flip.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/notify.min.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/languages.js"></script>
+  <script src="js/script.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#card").flip();
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="#">JJ</a> </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/index">Home</a></li>
+            <li><a href="/list">List</a></li>
+            <li><a href="/add">Learn New</a></li>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+      <!--/.container-fluid -->
+    </nav>
+    
+    <%- yield %>
+    
+  </div>
+</body>
+
+</html>
