@@ -6,13 +6,21 @@
   <title>
     JJ - Chinese
   </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-starturl" content="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
   <!-- Created from SCSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/flatly.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/prettify.css" />
   <link rel="stylesheet" href="css/index.css" />
+  
   <!-- <link rel="stylesheet" href="/assets/css/main.css" /> -->
   <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
   <!-- No Referrer -->
@@ -30,11 +38,13 @@
   <script src="https://cdn.rawgit.com/download/jQuery-Touch-Events/0.9.0/src/jquery.mobile-events.min.js"></script>
   <script src="https://cdn.rawgit.com/nnattawat/flip/v1.1.2/dist/jquery.flip.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   <script src="js/notify.min.js"></script>
   <script src="js/header.js"></script>
   <script src="js/functions.js"></script>
-  <script src="js/languages.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/script.js"></script>  
   <script type="text/javascript">
     $(function () {
       $("#card").flip();
@@ -48,12 +58,12 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="#">JJ</a> </div>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <i class="fas fa-language fa-4x"></i> <a class="navbar-brand" href="">JJ</a> </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/index">Home</a></li>
-            <li><a href="/list">List</a></li>
-            <li><a href="/add">Learn New</a></li>
+            <li><a id="index" href="#">Quiz</a></li>
+            <li><a id="list" href="#">List</a></li>
+            <li><a id="new" href="#">New</a></li>
           </ul>
         </div>
         <!--/.nav-collapse -->
@@ -61,7 +71,7 @@
       <!--/.container-fluid -->
     </nav>
     
-    <div id="card" class="card col5-md"><div class="front alert alert-info"><h1 id="original" class="text-center"></h1></div><div class="back well well-lg"><h1 id="translation" class="text-center"></h1></div></div><br><a href="javascript:location.reload(true)">Next</a><script>random_translation();</script>
+    <div id="cards"><div id="card" class="card text-center"><div class="front alert alert-info"><h2 id="original" class="text-center"></h2></div><div class="back well"><h2 id="translation" class="text-center"></h2></div></div><div class="row"><br></div><div id="buttons" class="row"><div class="col-md-2 text-right"><a id="prevTranslation" href="#" class="btn btn-default"><i class="fas fa-arrow-alt-circle-left fa-lg"></i></a> <a id="nextTranslation" href="#" class="btn btn-default"><i class="fas fa-arrow-alt-circle-right fa-lg"></i></a></div></div></div><table id="table" class="table table-striped"><th>learn</th><th>translation</th></table><form id="form" method="get" class="form-horizontal"><fieldset><!-- Form Name--><legend></legend><!-- Text input--><div class="form-group"><label for="new_original" class="col-md-4 control-label">Chinese</label><div class="col-md-4"><input id="new_original" name="new_original" type="text" placeholder="" required="" class="form-control input-md"></div></div><!-- Text input--><div class="form-group"><label for="new_translation" class="col-md-4 control-label">English</label><div class="col-md-4"><input id="new_translation" name="new_translation" type="text" placeholder="" required="" class="form-control input-md"></div></div><!-- Button--><div class="form-group"><label for="submit" class="col-md-4 control-label"></label><div class="col-md-4"><button id="submit" name="submit" class="btn btn-primary">Add New</button></div></div></fieldset></form>
     
   </div>
 </body>

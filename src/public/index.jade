@@ -1,11 +1,40 @@
-#card.card.col5-md
-  .front.alert.alert-info
-    h1#original.text-center
-  .back.well.well-lg
-    h1#translation.text-center
+#cards
+  #card.card.text-center
+    .front.alert.alert-info
+      h2#original.text-center
+    .back.well
+      h2#translation.text-center
+  .row
+    br
+  #buttons.row
+    .col-md-2.text-right
+      a.btn.btn-default#prevTranslation(href="#")
+        i.fas.fa-arrow-alt-circle-left.fa-lg
+      | 
+      a.btn.btn-default#nextTranslation(href="#")
+        i.fas.fa-arrow-alt-circle-right.fa-lg
 
-br
-a(href="javascript:location.reload(true)") Next
 
-script.
-  random_translation();
+table#table.table.table-striped
+  th learn
+  th translation
+
+form.form-horizontal#form(method="get")
+  fieldset
+    // Form Name
+    legend
+    // Text input
+    .form-group
+      label.col-md-4.control-label(for='new_original') Chinese
+      .col-md-4
+        input#new_original.form-control.input-md(name='new_original', type='text', placeholder='', required='')
+    // Text input
+    .form-group
+      label.col-md-4.control-label(for='new_translation') English
+      .col-md-4
+        input#new_translation.form-control.input-md(name='new_translation', type='text', placeholder='', required='')
+    // Button
+    .form-group
+      label.col-md-4.control-label(for='submit')
+      .col-md-4
+        button#submit.btn.btn-primary(name='submit') Add New
