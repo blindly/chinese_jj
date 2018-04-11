@@ -31,3 +31,29 @@ function getCookie(cname) {
   }
   return "";
 }
+
+function arrayCounter(action, myArray, key) {
+  var keyCount = Object.keys(myArray).length - 1;
+
+  if (action === 'back') {
+    if (key > keyCount) {
+      key = 0;
+    } else {
+      if (key == 0) {
+        key = keyCount;
+      } else {
+        key = key - 1;
+      }
+    }
+  }
+
+  if ( action === 'next' ) {
+    if (key > keyCount) {
+      key = 0;
+    } else {
+      key = key + 1;
+    }
+  }
+
+  return key;
+}
