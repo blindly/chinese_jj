@@ -23,34 +23,16 @@ $(document).ready(function() {
   });
 
   $("#prevTranslation").click(function() {
-    console.log("Previous");
-
-    var count = Object.keys(translations).length;
-    if (key >= count - 1) {
-      key = 0;
-    } else {
-      key = key + 1;
-    }
-
+    key = arrayCounter("back", translations, key);
     loadTranslations(translations, key);
   });
 
   $("#nextTranslation").click(function() {
-    console.log("Next");
-
-    var count = Object.keys(translations).length;
-    if (key >= count - 1) {
-      key = 0;
-    } else {
-      key = key + 1;
-    }
-
+    key = arrayCounter("next", translations, key);
     loadTranslations(translations, key);
   });
 
   $("#index").click(function() {
-    console.log("quiz");
-
     // Show
     $("#cards").fadeIn("slow");
 
@@ -60,8 +42,6 @@ $(document).ready(function() {
   });
 
   $("#list").click(function() {
-    console.log("list");
-
     // Show
     $("#table").fadeIn("slow");
 
@@ -71,8 +51,6 @@ $(document).ready(function() {
   });
 
   $("#new").click(function() {
-    console.log("new");
-
     // Show
     $("#form").fadeIn("slow");
 
@@ -82,8 +60,6 @@ $(document).ready(function() {
   });
 
   $("#submit").click(function() {
-    console.log("submit");
-
     formSubmit();
   });
 });
